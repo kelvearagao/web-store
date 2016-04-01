@@ -106,5 +106,18 @@ public class InMemoryProductRepository implements ProductRepository{
 		
 		return productsByCategory;
 	}
+
+	@Override
+	public List<Product> getProductsByManufacturer(String manufacturer) {
+		List<Product> productsByManufacturer = new ArrayList<Product>();
+		
+		for(Product product: listOfProducts) {
+			if(manufacturer.equalsIgnoreCase(product.getManufacturer())) {
+				productsByManufacturer.add(product);
+			}
+		}
+			
+		return productsByManufacturer;
+	}
 	
 }

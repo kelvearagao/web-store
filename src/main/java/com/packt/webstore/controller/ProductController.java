@@ -57,5 +57,15 @@ public class ProductController {
 		
 		return "product";
 	}
+	
+	/*
+	@RequestMapping("/{category}/{price}")
+	public String filterProducts(
+		@MatrixVariable(pathVar="category") Strinf category, @Matrix
+			Model model) {
+		
+		
+		return "products";
+	}*/
 
 }
