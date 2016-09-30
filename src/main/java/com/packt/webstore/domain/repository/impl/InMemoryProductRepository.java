@@ -1,7 +1,8 @@
-package com.packt.webstore.repository.impl;
+package com.packt.webstore.domain.repository.impl;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -10,7 +11,7 @@ import java.util.Set;
 import org.springframework.stereotype.Repository;
 
 import com.packt.webstore.domain.Product;
-import com.packt.webstore.repository.ProductRepository;
+import com.packt.webstore.domain.repository.ProductRepository;
 
 @Repository
 public class InMemoryProductRepository implements ProductRepository{
@@ -118,6 +119,51 @@ public class InMemoryProductRepository implements ProductRepository{
 		}
 			
 		return productsByManufacturer;
+	}
+
+	@Override
+	public List<Product> getProductsByPriceFiter(Map<String, String> priceFilter) {
+		List<Product> productsByPriceFilter = new ArrayList<Product>();
+		Set<String> criterias = priceFilter.keySet();
+		BigDecimal low = null;
+		BigDecimal high = null;
+		
+		
+		/*
+		if(criterias.contains("low")) {
+			low = new BigDecimal(priceFilter.get("low").toString());
+			high = new BigDecimal(priceFilter.get("low").toString());
+		}
+		*/
+		
+		System.out.println("test");
+		System.out.println(priceFilter.get("low").toString());
+		return listOfProducts;
+		
+		/*
+		if(criterias.contains("high")) {
+			high = new BigDecimal(priceFilter.get("high"));
+			
+			if(low == null) {
+				low = high;
+			}
+		}
+		
+		if(low != null) {
+			for(Product product : listOfProducts) {
+				if(low.compareTo(product.getUnitPrice()) <= 0 && 0 <= high.compareTo(product.getUnitPrice())) {
+					productsByPriceFilter.add(product);
+				}
+			}
+		}
+		
+		return productsByPriceFilter;
+		*/
+	}
+
+	@Override
+	public void addProduct(Product product) {
+		listOfProducts.add(product);
 	}
 	
 }

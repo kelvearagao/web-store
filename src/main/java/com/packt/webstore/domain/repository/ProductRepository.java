@@ -1,4 +1,4 @@
-package com.packt.webstore.repository;
+package com.packt.webstore.domain.repository;
 
 import java.util.List;
 import java.util.Map;
@@ -13,5 +13,7 @@ public interface ProductRepository {
 	List<Product> getProductsByCategory(String category);
 	Set<Product> getProductsByFilter(Map<String, List<String>> filterParams);
 	List<Product> getProductsByManufacturer(String manufacturer);
+	List<Product> getProductsByPriceFiter(Map<String, String> filterParams);
+	void addProduct(Product product);
 	
 }

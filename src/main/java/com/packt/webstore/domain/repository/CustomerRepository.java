@@ -1,4 +1,4 @@
-package com.packt.webstore.repository;
+package com.packt.webstore.domain.repository;
 
 import java.util.List;
 

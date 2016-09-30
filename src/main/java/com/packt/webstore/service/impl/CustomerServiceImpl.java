@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.packt.webstore.domain.Customer;
-import com.packt.webstore.repository.CustomerRepository;
+import com.packt.webstore.domain.repository.CustomerRepository;
 import com.packt.webstore.service.CustomerService;
 
 @Service
